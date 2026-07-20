@@ -1,0 +1,7 @@
+boto3==1.34.0
+faker==20.1.0
+pandas==2.1.4
+pyarrow==14.0.2
+pyspark==3.4.2
+pytest==7.4.4
+moto==4.2.14
