@@ -12,42 +12,42 @@ flowchart TD
     end
 
     subgraph STORAGE["S3 Storage Layer"]
-        S3L["S3: Landing\n/landing/"]
-        S3P["S3: Processed\n/processed/"]
-        S3O["S3: Output\n/output/"]
+        S3L["S3: Landing<br/>/landing/"]
+        S3P["S3: Processed<br/>/processed/"]
+        S3O["S3: Output<br/>/output/"]
     end
 
     subgraph TRIGGERS["Trigger Layer"]
         TRG_EVT[Lambda: S3 Event Trigger]
         TRG_SCHED[Lambda: Scheduled Trigger]
         TRG_MANUAL[Manual / CLI Trigger]
-        CW_RULE["CloudWatch Event Rule\ncron schedule"]
+        CW_RULE["CloudWatch Event Rule<br/>cron schedule"]
     end
 
     subgraph GLUE["Track A: AWS Glue"]
         G_ETL[Glue Job: Simple ETL]
         G_CDC[Glue Job: CDC + Bookmarks]
-        G_WF["Glue Workflow: Multi-Step\nRaw → Clean → Enrich → Aggregate"]
+        G_WF["Glue Workflow: Multi-Step<br/>Raw → Clean → Enrich → Aggregate"]
         G_CAT[Glue Data Catalog]
     end
 
     subgraph EMR["Track B: EMR Serverless"]
         E_ETL[EMR Job: Simple ETL]
         E_CDC[EMR Job: CDC + Checkpoint]
-        E_PIPE["Lambda Orchestrator:\nMulti-Step Pipeline"]
+        E_PIPE["Lambda Orchestrator:<br/>Multi-Step Pipeline"]
     end
 
     subgraph NOTIFY["Notification Layer"]
-        SNS["SNS Topic:\nETL Job Alerts"]
-        SQS["SQS Queue:\nJob Status"]
+        SNS["SNS Topic:<br/>ETL Job Alerts"]
+        SQS["SQS Queue:<br/>Job Status"]
         LNOTIFY[Lambda: Notifier]
         EMAIL[Student Email]
     end
 
     subgraph MONITOR["Monitoring"]
         CW_LOGS[CloudWatch Logs]
-        CW_ALARMS["CloudWatch Billing Alarms\n5 USD and 9 USD"]
-        IAM["IAM Roles\nLeast Privilege"]
+        CW_ALARMS["CloudWatch Billing Alarms<br/>5 USD and 9 USD"]
+        IAM["IAM Roles<br/>Least Privilege"]
     end
 
     DG -->|Upload CSV/JSON/Parquet| S3L
@@ -107,7 +107,7 @@ flowchart TD
         P1 --> P2 --> P3 --> P4 --> P5 --> P6 --> P7 --> P8
     end
 
-    PRE --> INFRA_CHOICE{How do you want\nto create AWS resources?}
+    PRE --> INFRA_CHOICE{How do you want<br/>to create AWS resources?}
 
     INFRA_CHOICE -->|I prefer clicking in AWS Console| MANUAL
     INFRA_CHOICE -->|I prefer running Python scripts| SCRIPT
@@ -207,7 +207,7 @@ sequenceDiagram
     S3L->>Lambda: S3 Event Notification
     Lambda->>ETL: start_job_run(path, track)
     ETL->>S3L: Read source data
-    Note over ETL: Transform:<br/>- Cast types<br/>- Remove nulls<br/>- Rename columns<br/>- Aggregate
+    Note over ETL: Transform:\n- Cast types\n- Remove nulls\n- Rename columns\n- Aggregate
     ETL->>S3O: Write Parquet output
     ETL->>SNS: Publish job status
     SNS->>Student: Email notification
@@ -220,7 +220,7 @@ sequenceDiagram
     participant S3L as S3 Landing
     participant ETL as Glue/EMR CDC Job
     participant S3P as S3 Processed
-    participant CHK as Checkpoint\n(S3 file or Job Bookmark)
+    participant CHK as Checkpoint (S3 or Job Bookmark)
 
     Note over S3L: Day 1: Full load (1000 rows)
     S3L->>ETL: Read all records
@@ -231,7 +231,7 @@ sequenceDiagram
     S3L->>ETL: New data arrives
     ETL->>CHK: Read last_processed_timestamp
     ETL->>S3L: Read only records WHERE timestamp > checkpoint
-    Note over ETL: SCD Type 2:<br/>- New rows: INSERT<br/>- Changed rows: close old, INSERT new version<br/>- Deleted rows: mark is_deleted=true
+    Note over ETL: SCD Type 2:\n- New rows: INSERT\n- Changed rows: close old, INSERT new version\n- Deleted rows: mark is_deleted=true
     ETL->>S3P: Write SCD history table
     ETL->>CHK: Update checkpoint timestamp
 ```

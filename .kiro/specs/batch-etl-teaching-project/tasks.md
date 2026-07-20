@@ -830,8 +830,8 @@ This file explains the Python scripts and how to run them. Sections:
 
 ### Setup and Infrastructure
 - [x] Task 0: Local tools installed, AWS account configured, `aws sts get-caller-identity` works
-- [-] Task 0: `docs/00-prerequisites-and-setup.md` created
-- [~] Task 1: Infrastructure created (S3, IAM, SNS, SQS, CloudWatch billing alarms)
+- [x] Task 0: `docs/00-prerequisites-and-setup.md` created
+- [-] Task 1: Infrastructure created (S3, IAM, SNS, SQS, CloudWatch billing alarms)
 - [~] Task 1: `docs/01-infrastructure-manual-setup.md` created
 - [~] Task 1: `docs/01-infrastructure-script-guide.md` created
 
