@@ -829,44 +829,44 @@ This file explains the Python scripts and how to run them. Sections:
 ## Completion Checklist
 
 ### Setup and Infrastructure
-- [ ] Task 0: Local tools installed, AWS account configured, `aws sts get-caller-identity` works
-- [ ] Task 0: `docs/00-prerequisites-and-setup.md` created
-- [ ] Task 1: Infrastructure created (S3, IAM, SNS, SQS, CloudWatch billing alarms)
-- [ ] Task 1: `docs/01-infrastructure-manual-setup.md` created
-- [ ] Task 1: `docs/01-infrastructure-script-guide.md` created
+- [x] Task 0: Local tools installed, AWS account configured, `aws sts get-caller-identity` works
+- [-] Task 0: `docs/00-prerequisites-and-setup.md` created
+- [~] Task 1: Infrastructure created (S3, IAM, SNS, SQS, CloudWatch billing alarms)
+- [~] Task 1: `docs/01-infrastructure-manual-setup.md` created
+- [~] Task 1: `docs/01-infrastructure-script-guide.md` created
 
 ### Data and Simple ETL
-- [ ] Task 2: Synthetic data generator producing CSV, JSON, Parquet, CDC data
-- [ ] Task 2: `docs/02-data-generator-guide.md` created
-- [ ] Task 3A: Glue Simple ETL job running and producing Parquet output
-- [ ] Task 3A: `docs/03a-glue-simple-etl-guide.md` created
-- [ ] Task 3B: EMR Serverless Simple ETL job running with equivalent output
-- [ ] Task 3B: `docs/03b-emr-simple-etl-guide.md` created
+- [~] Task 2: Synthetic data generator producing CSV, JSON, Parquet, CDC data
+- [~] Task 2: `docs/02-data-generator-guide.md` created
+- [~] Task 3A: Glue Simple ETL job running and producing Parquet output
+- [~] Task 3A: `docs/03a-glue-simple-etl-guide.md` created
+- [~] Task 3B: EMR Serverless Simple ETL job running with equivalent output
+- [~] Task 3B: `docs/03b-emr-simple-etl-guide.md` created
 
 ### Triggers
-- [ ] Task 4: Lambda triggers (event-driven, on-demand) deployed and tested
-- [ ] Task 4: `docs/04-lambda-triggers-guide.md` created
-- [ ] Task 5: CloudWatch scheduled trigger firing and starting jobs
-- [ ] Task 5: `docs/05-scheduled-trigger-guide.md` created
+- [~] Task 4: Lambda triggers (event-driven, on-demand) deployed and tested
+- [~] Task 4: `docs/04-lambda-triggers-guide.md` created
+- [~] Task 5: CloudWatch scheduled trigger firing and starting jobs
+- [~] Task 5: `docs/05-scheduled-trigger-guide.md` created
 
 ### CDC
-- [ ] Task 6A: Glue CDC with job bookmarks tracking incremental data
-- [ ] Task 6A: `docs/06a-glue-cdc-guide.md` created
-- [ ] Task 6B: EMR CDC with S3 checkpoint tracking incremental data
-- [ ] Task 6B: `docs/06b-emr-cdc-guide.md` created
+- [~] Task 6A: Glue CDC with job bookmarks tracking incremental data
+- [~] Task 6A: `docs/06a-glue-cdc-guide.md` created
+- [~] Task 6B: EMR CDC with S3 checkpoint tracking incremental data
+- [~] Task 6B: `docs/06b-emr-cdc-guide.md` created
 
 ### Multi-Step Pipeline
-- [ ] Task 7A: Glue Workflow executing 4-stage pipeline sequentially
-- [ ] Task 7A: `docs/07a-glue-pipeline-guide.md` created
-- [ ] Task 7B: Lambda-orchestrated EMR 4-stage pipeline executing sequentially
-- [ ] Task 7B: `docs/07b-emr-pipeline-guide.md` created
+- [~] Task 7A: Glue Workflow executing 4-stage pipeline sequentially
+- [~] Task 7A: `docs/07a-glue-pipeline-guide.md` created
+- [~] Task 7B: Lambda-orchestrated EMR 4-stage pipeline executing sequentially
+- [~] Task 7B: `docs/07b-emr-pipeline-guide.md` created
 
 ### Notifications, Real Data, and Wrap-Up
-- [ ] Task 8: SNS email + SQS messages received on all job completions/failures
-- [ ] Task 8: `docs/08-notifications-guide.md` created
-- [ ] Task 9: Public dataset (NYC Taxi) processed end-to-end with both tracks
-- [ ] Task 9: `docs/09-public-dataset-guide.md` created
-- [ ] Task 10: Comparison guide, cost dashboard, and student exercises complete
-- [ ] Task 10: `docs/10-comparison-and-cleanup.md` created
-- [ ] Task 10: `infrastructure/cleanup.py` run — all course AWS resources deleted
-- [ ] Total monthly AWS cost verified under $10
+- [~] Task 8: SNS email + SQS messages received on all job completions/failures
+- [~] Task 8: `docs/08-notifications-guide.md` created
+- [~] Task 9: Public dataset (NYC Taxi) processed end-to-end with both tracks
+- [~] Task 9: `docs/09-public-dataset-guide.md` created
+- [~] Task 10: Comparison guide, cost dashboard, and student exercises complete
+- [~] Task 10: `docs/10-comparison-and-cleanup.md` created
+- [~] Task 10: `infrastructure/cleanup.py` run — all course AWS resources deleted
+- [~] Total monthly AWS cost verified under $10
