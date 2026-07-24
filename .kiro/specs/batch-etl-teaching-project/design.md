@@ -1,9 +1,9 @@
-# Design - Batch Process ETL Teaching Project
-
-## 1. High-Level Architecture
+# High-Level Architecture
 
 The project is organized into layers: data ingestion, storage, processing (dual-track), orchestration, and notification.
+Design - Batch Process ETL Teaching Project
 
+## 1. 
 ```mermaid
 flowchart TD
     subgraph INGEST["Data Ingestion"]

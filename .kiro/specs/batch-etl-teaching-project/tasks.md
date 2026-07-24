@@ -832,13 +832,13 @@ This file explains the Python scripts and how to run them. Sections:
 - [x] Task 0: Local tools installed, AWS account configured, `aws sts get-caller-identity` works
 - [x] Task 0: `docs/00-prerequisites-and-setup.md` created
 - [-] Task 1: Infrastructure created (S3, IAM, SNS, SQS, CloudWatch billing alarms)
-- [~] Task 1: `docs/01-infrastructure-manual-setup.md` created
-- [~] Task 1: `docs/01-infrastructure-script-guide.md` created
+- [x] Task 1: `docs/01-infrastructure-manual-setup.md` created
+- [x] Task 1: `docs/01-infrastructure-script-guide.md` created
 
 ### Data and Simple ETL
-- [~] Task 2: Synthetic data generator producing CSV, JSON, Parquet, CDC data
-- [~] Task 2: `docs/02-data-generator-guide.md` created
-- [~] Task 3A: Glue Simple ETL job running and producing Parquet output
+- [x] Task 2: Synthetic data generator producing CSV, JSON, Parquet, CDC data
+- [x] Task 2: `docs/02-data-generator-guide.md` created
+- [-] Task 3A: Glue Simple ETL job running and producing Parquet output
 - [~] Task 3A: `docs/03a-glue-simple-etl-guide.md` created
 - [~] Task 3B: EMR Serverless Simple ETL job running with equivalent output
 - [~] Task 3B: `docs/03b-emr-simple-etl-guide.md` created
