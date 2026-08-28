@@ -190,6 +190,7 @@ The key thing is that it says `aws-cli/2.x.x`. If it says `aws-cli/1.x.x` you ha
 
 **How to verify it worked:**
 
+
 ```bash
 git --version
 ```
